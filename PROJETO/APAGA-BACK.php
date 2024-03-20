@@ -21,7 +21,7 @@
         $sql = "DELETE FROM cliente WHERE id=$id";
         echo $sql."<br>";
         if($conexao->query($sql)=== TRUE){
-            echo "Removido com sucesso!";
+            header("location: sucesso.php");
         }
         else{
             echo "Erro:".$sql."<br>".$conexao->error;
@@ -29,6 +29,5 @@
         $conexao->close();
     }    
 ?>
-<a href="index.php">Voltar</a>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 // VALIDANDO A EXISTENCIA DE DADOS
 if(isset($_POST["nome"])&& isset($_POST["email"])&& isset($_POST["cidade"])&& isset($_POST["uf"]));
 {
@@ -23,21 +23,23 @@ else
         echo "Ocorreu um erro na conexão com o banco de dados.";
         exit;
     }
-// REALIZA O CADASTRO OU ATUALIZAÇÃO NO BANCO DE DADOS.
-$nome   = $_POST["nome"]; 
-$email  = $_POST["email"]; 
-$cidade = $_POST["cidade"]; 
-$uf     = $_POST["uf"]; 
-$id     = $_POST['id'];
-    $sql= "UPDATE `cliente` SET nome='$nome', email='$email',cidade='$cidade',uf= '$uf' WHERE id='$id'";
-    echo $sql."<br>";   
-    if ($conexao->query($sql)=== TRUE){
-    $sucesso="Alterado com sucesso!";
-} else{
-    $erro = "ERRO!!!!!!!!!!!!".$sql."<br>".$conexão->errpr;
-}$conexao->close();
-}
-
+    //VAMOS TRALIZAR O CADASTRO OU AUTERAÇÃO DOS DADOS ENVIADOS
+    $nome   = $_POST["nome"]; 
+    $email  = $_POST["email"]; 
+    $cidade = $_POST["cidade"]; 
+    $uf     = $_POST["uf"]; 
+                                             //tem que ter apostrofo (``)                    
+    $stmt = $conexao-> prepare("INSERT INTO `cliente`(`nome`,`email`,`cidade`,`uf`)VALUES(?,?,?,?)");
+    $stmt-> bind_param('ssss',$nome,$email,$cidade,$uf);
+    
+    if(!$stmt->execute())
+    {
+        $erro = $stmt->error;
+    }
+    else{
+        header("location: sucesso.php");;
+    }
+  }
 }
 if(isset($erro))
 echo'<div style="color:#F00>"'.$erro.'</div><br>';
@@ -45,5 +47,4 @@ if(isset($sucesso))
 echo'<div style= "color: green">'.$sucesso.'</div><br>';
 
 echo"<a href='index.php'>Voltar</a>";
-
 ?>
