@@ -44,6 +44,5 @@ echo'<div style="color:#F00>"'.$erro.'</div><br>';
 if(isset($sucesso))
 echo'<div style= "color: green">'.$sucesso.'</div><br>';
 
-echo"<a href='index.php'>Voltar</a>";
 
 ?>

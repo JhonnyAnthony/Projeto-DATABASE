@@ -17,6 +17,14 @@
             echo "Ocorreu um erro na conexão com o banco de dados.";
             exit;
         }
+        //
+        $nome   = $_POST["nome"]; 
+        $email  = $_POST["email"]; 
+        $cidade = $_POST["cidade"]; 
+        $uf     = $_POST["uf"]; 
+        $id     = $_POST['id'];
+        $sql= "UPDATE `cliente` SET nome='$nome', email='$email',cidade='$cidade',uf= '$uf' WHERE id='$id'";
+        //
         $conexao->set_charset("utf8"); //Acentuação
         $sql = "DELETE FROM cliente WHERE id=$id";
         echo $sql."<br>";

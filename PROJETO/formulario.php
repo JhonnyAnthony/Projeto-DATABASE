@@ -59,7 +59,7 @@
             type="text"
             name="uf"
             placeholder="Digite seu estado"
-            required
+            required max-length="2"
           />
           <br />
           <input type="hidden" value="-1" name="id" />

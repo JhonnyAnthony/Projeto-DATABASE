@@ -32,22 +32,22 @@
       </form>
     </div>
     <div>
-      <nav class="navbar">
+    <nav class="navbar">
         <ul>
-          <li><a href="#" class="fa-solid fa-house" title="Menu"></a></li>
+          <li><a href="index.php" class="fa-solid fa-house" title="Menu"></a></li>
           <li>
             <a
-              href="#"
+              href="procurar.php"
               class="fa-solid fa-magnifying-glass"
               title="Buscar usuário"
             ></a>
           </li>
-          <li><a href="#" title="Cadastrar usuário">CADASTRAR</a></li>
-          <li><a href="#" title="Listar usuários">LISTAR</a></li>
-          <li><a href="#">LISTA</a></li>
-          <li><a href="#" title="Atualizar usuário">ATUALIZAR</a></li>
+          <li><a href="formulario.php" title="Cadastrar usuário">CADASTRAR</a></li>
+          <li><a href="TABELA-PHP.php" title="Listar usuários">LISTAR</a></li>
+          <li><a href="LISTA.php">LISTA</a></li>
+          <li><a href="atualizar.php" title="Atualizar usuário">ATUALIZAR</a></li>
           <li>
-            <a href="#" class="fa-solid fa-eraser" title="Apagar usuário"></a>
+            <a href="apagar.php" class="fa-solid fa-eraser" title="Apagar usuário"></a>
           </li>
         </ul>
       </nav>
